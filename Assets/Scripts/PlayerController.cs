@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     public float movementX;
     public float speed = 5f;
     
-    
     void Start()
     {
         circleCollider = GetComponent<CircleCollider2D>();
