@@ -2,9 +2,7 @@
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
-{
-    public EnemyController enemyController;
-
+{   
     public Transform spawnPos;
     float spawnX;
     float spawnY;
