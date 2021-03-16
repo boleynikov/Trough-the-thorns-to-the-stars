@@ -31,4 +31,12 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(movementX * speed, rb.velocity.y);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
