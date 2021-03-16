@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody2D rb;
-    CircleCollider2D circleCollider;
     public float movementX;
     public float speed = 5f;
+
+    public GameObject restartBtnObject;
+    public GameObject exitBtnObject;
+    public GameObject pauseRtnObject;
+    public GameObject panel;
+
+    Rigidbody2D rb;
+    CircleCollider2D circleCollider;
+
+    
     
     void Start()
     {
@@ -37,6 +45,11 @@ public class PlayerController : MonoBehaviour
         if(collision.collider.tag == "Enemy")
         {
             Destroy(gameObject);
+            Time.timeScale = 0;
+            restartBtnObject.SetActive(true);
+            exitBtnObject.SetActive(true);
+            panel.SetActive(true);
+            pauseRtnObject.SetActive(false);
         }
     }
 }
